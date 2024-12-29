@@ -27,6 +27,9 @@ const AppContextProvider = (props) => {
         console.log("user data", data);
         setCredit(data.credits);
         setUser(data.user);
+        if (data.credits === 0 || data.credits < 0) {
+          navigate("/buy");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -49,7 +52,7 @@ const AppContextProvider = (props) => {
       } else {
         toast.error(data.message);
         loadCreditsData();
-        if (data.creditBalance === 0 || data.creditBalance < 0 ) {
+        if (data.creditBalance === 0 || data.creditBalance < 0) {
           navigate("/buy");
         }
       }
