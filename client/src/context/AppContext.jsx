@@ -24,7 +24,6 @@ const AppContextProvider = (props) => {
       });
 
       if (data.success) {
-        console.log("user data", data);
         setCredit(data.credits);
         setUser(data.user);
         if (data.credits === 0 || data.credits < 0) {

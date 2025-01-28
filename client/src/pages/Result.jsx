@@ -9,20 +9,21 @@ const Result = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState("");
 
-  const { generateImage } = useContext(AppContext)
+  const { generateImage } = useContext(AppContext);
 
-  const onSubmitHandler = async(e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setInput("");
 
-    if(input){
+    if (input) {
       const image = await generateImage(input);
-      if(image){
+      if (image) {
         setIsImageLoaded(true);
-        setImage(image)
+        setImage(image);
       }
     }
-    setIsLoading(false)
+    setIsLoading(false);
   };
 
   return (

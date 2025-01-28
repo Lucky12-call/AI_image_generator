@@ -17,7 +17,7 @@ app.use(cors({
 }));
 
 // setup routes
-app.get("/", (req, res) => res.send("API working"));
+app.get("/", (_, res) => res.send("API working"));
 
 app.use("/api/user", userRouter);
 app.use("/api/image", imageRouter);
