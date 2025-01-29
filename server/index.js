@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "*",
+    origin: "https://ai-image-generator-k5a9.vercel.app",
     methods: ["GET", "POST", "UPDATE", "DELETE"],
     credentials: true,
 }));
